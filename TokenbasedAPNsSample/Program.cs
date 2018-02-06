@@ -27,16 +27,16 @@ namespace TokenbasedAPNsSample
         {
             string algorithm = "ES256";
 
-            string apnsKeyId = "<APNs Auth Key ID>";
-            string teamId = "<Team ID get from Apple Developer Membership Details>";           
-            string authKeyPath = "<APNs Auth Key download from Apple Developer>";
+            string apnsKeyId = "3E5968CWE5";
+            string teamId = "WC4PV6LPBZ";           
+            string authKeyPath = @"<WE5.p8>";
 
-            string bundleId = "<Identifiers App ID>";
-            string registrationId = "<Device Token>";
+            string bundleId = "<bundleId>";
+            string registrationId = "<registrationId>";
 
             //讀取下載的加密私鑰(.p8)
             var privateKeyContent = System.IO.File.ReadAllText(authKeyPath);
-            var privateKey = privateKeyContent.Split('\n')[1];
+            var privateKey = privateKeyContent.Replace("-----BEGIN PRIVATE KEY-----", String.Empty).Replace("-----END PRIVATE KEY-----", String.Empty).Replace("\n", String.Empty);    // privateKeyContent.Split('\n')[1];
 
             var secretKeyFile = Convert.FromBase64String(privateKey);
             var secretKey = CngKey.Import(secretKeyFile, CngKeyBlobFormat.Pkcs8PrivateBlob);
