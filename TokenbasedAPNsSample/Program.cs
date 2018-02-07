@@ -27,8 +27,8 @@ namespace TokenbasedAPNsSample
         {
             string algorithm = "ES256";
 
-            string apnsKeyId = "3E5968CWE5";
-            string teamId = "WC4PV6LPBZ";           
+            string apnsKeyId = "<apnsKeyId>";
+            string teamId = "<teamId>";           
             string authKeyPath = @"<WE5.p8>";
 
             string bundleId = "<bundleId>";
